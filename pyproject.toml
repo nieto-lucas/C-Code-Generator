@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "c-generator"
+version = "0.1.0"
+description = "Hace crecer un programa C por generaciones expandiendo sus funciones terminales"
+requires-python = ">=3.10"
+dependencies = ["pycparser>=2.21"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+c-generator = "c_generator.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
